@@ -1,0 +1,645 @@
+asssginment.txt
+
+1)Even and odd Numbers:
+
+public class even 
+{  
+public static void main(String args[])   
+{   
+for (int i=1; i<=20; i++) 
+{  
+    if (i%2==0)   
+    System.out.println("Even Number= "+i);
+    else
+    System.out.println("Odd number= "+i);
+}  
+}  
+}
+  
+
+ 2)Factorial
+
+ class factorial
+{
+    public static void main(String []args)
+    {
+        int factorial = 1;
+        for (int i=8; i>=1; i--)
+        {
+          factorial=factorial*i;
+        }
+        System.out.println(factorial);
+    }
+
+}
+
+
+3)If-else 
+
+import java.util.Scanner;
+class Student_Division
+{
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter The Five Subject Marks :");
+		int m1 = input.nextInt();
+		int m2 = input.nextInt();
+		int m3 = input.nextInt();
+		int m4 = input.nextInt();
+		int m5 = input.nextInt();
+		int tot = m1+m2+m3+m4+m5;
+		float per = tot/5;
+		System.out.println("Total :"+tot);
+		System.out.println("Percentage :"+per);	
+		if(per>=60)
+		{			
+			System.out.println("First Division.");
+		}
+		else if(per>=50 && per<=59)
+		{			
+			System.out.println("Second Division.");
+		}
+		else if(per>=40 && per<=49)
+		{			
+			System.out.println("Third  Division.");
+		}
+		else
+		{			
+			System.out.println("Fail.");
+		}
+	}
+}
+
+4)leap year
+
+public class LeapYear {
+
+  public static void main(String[] args) {
+    int year = 1990;
+    if (year % 400 == 0) {
+      System.out.println(year + " is a leap year.");
+    } 
+    else if (year % 100 == 0) {
+      System.out.println(year + " is not a leap year.");
+    } 
+    else if (year % 4 == 0) {
+      System.out.println(year + " is a leap year.");
+    } 
+    else {
+      System.out.println(year + " is not a leap year.");
+    }
+  }
+}
+
+
+5) Prime number
+
+class Prime {
+
+ public static void main(String[] args) {
+
+  int num = 20, count;
+  for (int i = 1; i <= num; i++) {
+   count = 0;
+   for (int j = 2; j <= i / 2; j++) {
+    if (i % j == 0) {
+     count++;
+     break;
+    }
+   }
+
+   if (count == 0) {
+    System.out.println(i);
+   }
+
+  }
+ }
+}
+
+6)Reverse String
+
+class Revstring {
+	public static void main (String[] args) {
+	
+		String str= "Dheeraj Reddy", revstr="";
+		char ch;
+	for (int i=0; i<str.length(); i++)
+	{
+		ch= str.charAt(i);
+		revstr= ch+revstr; 
+	}
+	System.out.println("Reversed word: "+ revstr);
+	}
+}
+
+
+7) Swapping variables
+
+class swap
+{
+    public static void main(String []args)
+    {
+        int a=5, b=10;
+        int temp = a;
+        a=b;
+        b=temp;
+        System.out.println("The value of of a is=" + a);
+        System.out.println("The value of b is ="+b);
+
+    }
+}
+
+
+8)Tables
+
+public class MultiplicationTable {
+
+    public static void main(String[] args) {
+
+        for(int j=2;j<=5;j++)
+        {
+        for(int i = 1; i <= 10; ++i)
+        {
+            System.out.printf("%d * %d = %d \n", j, i, j * i);
+        }
+        }
+    }
+}
+
+
+9)Diamond pattern
+
+import java.util.Scanner;
+public class Diamond 
+{
+
+  public static void main(String[] args)
+  {
+
+          Scanner sc=new Scanner(System.in);
+          System.out.println("Enter N : ");
+          int n=sc.nextInt(); 
+          System.out.print("Enter Symbol : ");
+
+          char c = sc.next().charAt(0);
+
+          for(int i=1;i<=n;i++)
+          {
+          for(int j=1;j<=n-i;j++)
+          {
+          System.out.print(" ");
+          }
+
+          for(int j=1;j<=i*2-1;j++)
+
+          {
+          System.out.print(c);
+          }
+          System.out.println();
+
+          } 
+          for(int i=n-1;i>0;i--)
+          {
+          for(int j=1;j<=n-i;j++)
+
+          {
+          System.out.print(" ");
+          }
+          for(int j=1;j<=i*2-1;j++)
+
+          {
+          System.out.print(c);
+          }
+          System.out.println();
+          }
+
+}
+}
+
+
+10)Pant pattern
+
+class Main  {  
+    public static void main(String[] args)  {  
+      int n = 5;
+      for(int row = n ; row >= 0 ; row--) {
+        for(int col = n ; col > row ; col--) {
+          System.out.print("* ");
+        }
+        for(int col = 1 ; col <= 4 * row ; col++) {
+          System.out.print(" ");
+        }
+        for(int col = row + 1 ; col <= n ; col++) {
+          System.out.print("* ");
+        }
+      System.out.println();
+      }
+    }  
+}  
+
+11) Inverted pant pattern
+
+import java.util.Scanner;
+public class inverted {
+    
+    public static void main(String[] args) {
+        Scanner cs=new Scanner(System.in);
+        int row_size = 5;
+        int out,in;
+        int print_control_x=row_size;
+        int print_control_y=row_size;
+       
+        for(out=1;out<=row_size;out++)
+        {
+           for(in=1;in<row_size*2;in++)
+           {
+               if(in>print_control_x && in<print_control_y)
+               {
+                  System.out.printf(" ");
+               }
+               else
+               {
+                System.out.printf("*");    
+               }
+           }
+           print_control_x--;
+           print_control_y++;
+           System.out.println(); 
+        }
+        cs.close();
+    }
+}
+
+
+12)Third max
+
+
+import java.util.Arrays;
+
+public class Thirdmax {
+    public static void main(String []args) 
+    {
+        int arr[]={22,100,44,11,22,100,77,44,11};
+        Arrays.sort(arr);
+        System.out.println(arr[2]);
+     }
+
+}
+
+-----------------------------------------------------------------------------------------------
+
+1) superclass
+
+
+import java.util.*;
+public class Superclass 
+{
+    int sum(int a, int b)
+    {
+        int add = a+b;
+        return add;
+    }
+    
+}
+
+class Subclass extends Superclass {
+
+}
+
+class A{
+    public static void main(String []args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter two numbers:");
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        Superclass s = new Subclass();
+        System.out.println(s.sum(a,b));
+
+        
+    }
+}
+
+
+2)import java.util.*;
+
+
+interface divisors
+{
+   public int sum_of_divisors(int b);
+}
+
+class Interfaces implements divisors
+{
+
+    public int sum_of_divisors(int a)
+    {
+        int sum=0;
+        for(int i=1;i<=a;i++)
+        {
+            if(a%i==0)
+            sum=sum+i;
+        }
+
+        return sum;
+    }
+}
+
+class Sum
+{
+    public static void main(String []args) 
+    {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the number to find sum of its divisors");
+        int number=s.nextInt();
+        divisors d = new Interfaces();
+        int sum=d.sum_of_divisors(number);
+        System.out.println(sum);
+    
+    }
+
+}
+    
+
+
+3) Descending order string of numbers
+
+import java.util.*;
+public class Descending {
+
+    public static void main(String []args) 
+    {
+        Scanner s =new Scanner(System.in);
+        int size;
+        String[] a;
+        try
+        {
+         System.out.println("Enter the array size: ");
+         size = s.nextInt();
+         a=new String[size];
+         System.out.println("Enter array values: ");
+         for(int i=0;i<size;i++)
+             a[i]=s.next();
+         Arrays.sort(a);        
+         System.out.println("Output: ");
+         System.out.println(Arrays.toString(a));
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        
+    }
+
+    
+}
+
+
+4)Exception handling
+
+import java.util.*;
+
+public class Exceptionhandling {
+
+    public static void main(String []args)
+    {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the values");
+        var c=0;
+        try{
+            var a=s.nextInt();
+            var b=s.nextInt();
+            c= a/b;
+        }
+        catch( InputMismatchException e)
+        {
+            System.out.println(e);
+        }
+        catch (ArithmeticException er)
+        {
+            System.out.println(er);
+        }
+
+        // catch(Exception e)
+        // {
+        //     System.out.println(e);
+        // }
+        finally{
+            System.out.println("Program ran successfully and value of c is: "+ c);
+        }     
+      
+    }
+}
+
+
+5) SBIaccount premium and Jundhan account
+
+
+public class SBIBankAccount
+{
+    int balance = 0;
+    void deposit(int a)
+    {
+        balance+=a;
+        System.out.println("Balance:"+balance);
+    }
+
+    void withdraw(int a)
+    { 
+        if(balance-a > 0)
+        {
+            System.out.println("Available balance after withdrawl is: "+ (balance -a));
+        }
+        else{
+            System.out.println("Minimum 5000 balance must be in account");
+        }
+
+
+    }
+
+    void openaccount()
+    {
+        System.out.println("Welcome to SBI");
+    }
+
+}
+
+
+class PremiumAccount extends SBIBankAccount
+{
+    int balance;
+    void deposit(int a)
+    {
+       balance = a+balance ;
+       System.out.println("Total balance: " + balance);
+    }
+
+    void withdraw(int a)
+    {
+        if(balance-a > 5000)
+        {
+            System.out.println("Available balance after withdrawl is: "+ (balance-a));
+        }
+        else{
+            System.out.println("Minimum 5000 balance must be in account");
+        }
+    }
+    void openaccount()
+    {
+        balance = 5000;
+        System.out.println("Premium account created and 5000 is deposited");
+    }
+
+}
+
+
+class JundhanAccount  extends SBIBankAccount
+{
+    int balance;
+    void deposit(int a)
+    {
+        balance = balance+a;
+    }
+
+    void withdraw(int a)
+    {
+        if(balance-a > 0)
+        {
+            System.out.println("Available balance after withdrawl is: "+ (balance -a));
+        }
+        else{
+            System.out.println("Minimum 5000 balance must be in account");
+        }
+    }
+    void openaccount()
+    {
+        int balance =0;
+        System.out.println("Jundhan account is created and balance is 0.");
+
+        
+    }
+}
+
+class SBIAccount{
+    public static void main(String []args) {
+        SBIBankAccount user1 = new PremiumAccount();
+        user1.openaccount();
+        user1.deposit(4000);
+        user1.withdraw(3000);
+
+        SBIBankAccount user2 = new JundhanAccount();
+        user2.openaccount();
+        user2.deposit(2000);
+        user2.withdraw(1500);
+
+        
+    }
+}
+
+6)BankAccount
+
+import java.util.*;
+interface Account {
+    void deposit(double amount);
+    void withdraw(double amount);
+    double getBalance();
+}
+
+class SavingsAccount implements Account {
+    private double balance;
+
+    public SavingsAccount(double balance) {
+        this.balance = balance;
+    }
+
+    @Override
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    @Override
+    public void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+        } else {
+            System.out.println("Insufficient funds");
+        }
+    }
+
+    @Override
+    public double getBalance() {
+        return balance;
+    }
+}
+
+class CurrentAccount implements Account {
+    private double balance;
+
+    public CurrentAccount(double balance) {
+        this.balance = balance;
+    }
+
+    @Override
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    @Override
+    public void withdraw(double amount) {
+        balance -= amount;
+    }
+
+    @Override
+    public double getBalance() {
+        return balance;
+    }
+}
+
+class Bank {
+    private List<Account> accounts;
+
+    public Bank() {
+        accounts = new ArrayList<>();
+    }
+
+    public void addAccount(Account account) {
+        accounts.add(account);
+    }
+
+    public void depositToAccount(int accountIndex, double amount) {
+        Account account = accounts.get(accountIndex);
+        account.deposit(amount);
+    }
+
+    public void withdrawFromAccount(int accountIndex, double amount) {
+        Account account = accounts.get(accountIndex);
+        account.withdraw(amount);
+    }
+
+    public double getAccountBalance(int accountIndex) {
+        Account account = accounts.get(accountIndex);
+        return account.getBalance();
+    }
+
+    public static void main(String[] args) {
+        Bank bank = new Bank();
+        bank.addAccount(new SavingsAccount(1000));
+        bank.addAccount(new CurrentAccount(500));
+
+        bank.depositToAccount(0, 200);
+        bank.withdrawFromAccount(1, 300);
+
+        double balance = bank.getAccountBalance(0);
+        System.out.println("Savings Account Balance: " + balance);
+
+        balance = bank.getAccountBalance(1);
+        System.out.println("Current Account Balance: " + balance);
+    }
+}
+
+
+
+
+
+
