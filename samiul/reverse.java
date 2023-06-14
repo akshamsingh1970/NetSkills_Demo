@@ -1,11 +1,8 @@
-// Java program to Reverse a String by
-// converting string to characters one
-// by one
+
 import java.lang.*;
 import java.io.*;
 import java.util.*;
 
-// Class of ReverseString
 class reverse{
 	public static void main(String[] args)
 	{
