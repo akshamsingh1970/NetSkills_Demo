@@ -1,6 +1,6 @@
 public class printDiamond {
     public static void main(String[] args) {
-        int n = 12;
+        int n = 6;
         int totalPlaces = n + (n - 1);
         for(int i = 1; i <= n; i++) {
             int spaces = (totalPlaces - i - (i - 1)) / 2;
