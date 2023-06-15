@@ -1,4 +1,4 @@
-package wednesday;
+package secondset;
 
 import java.util.HashMap;
 

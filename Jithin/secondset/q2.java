@@ -1,11 +1,11 @@
-package wednesday;
+package secondset;
 
 import java.util.Scanner;
 
-interface parent{
+interface parentM{
     public int fun(int a);
 }
-class child implements parent{
+class childM implements parentM{
     public int fun(int a){
         int sum=0;
         for(int i=1;i<=Math.sqrt(a);i++){
@@ -21,7 +21,7 @@ public class q2 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in); 
         int a=sc.nextInt();
-        child obj=new child();
+        childM obj=new childM();
         System.out.println(obj.fun(a));
         sc.close();
     }
