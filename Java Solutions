@@ -1,0 +1,316 @@
+
+//1. Reverse string
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+  	Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+    System.out.println("Enter string");
+    String originalStr = myObj.nextLine();
+    String reversedStr = "";
+    System.out.println("Original string: " + originalStr);
+        
+    for (int i = 0; i < originalStr.length(); i++) {
+      reversedStr = originalStr.charAt(i) + reversedStr;
+    }
+    
+    System.out.println("Reversed string: "+ reversedStr);
+  }
+}
+
+//2. Prime nos within 20
+
+public class PrimeNumberChecker {
+    public static void main(String[] args) {
+        for(int i=1;i<=20;i++){
+        boolean isPrime = true;
+        int number=i;
+        if (number <= 1) {
+            isPrime = false;
+        } else {
+            for (int j = 2; j <= Math.sqrt(number); j++) {
+                if (number % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime) {
+            System.out.println(number + " is a prime number.");
+        } else {
+            System.out.println(number + " is not a prime number.");
+        }
+    }
+    }
+}
+
+//3. Multiplication Tables
+public class Main {
+  public static void main(String[] args) {
+    for(int i=2;i<6;i++){
+    	for(int j=1;j<=10;j++){
+        	System.out.println(i+"*"+j+"="+i*j);
+        }
+    }
+  }
+}
+
+//4. odd and even
+public class Main {
+  public static void main(String[] args) {
+    for(int i=1;i<20;i++){
+    	if(i%2==1)System.out.println(i+" is an odd number.");
+        else System.out.println(i+" is an even number.");
+    }
+  }
+}
+
+//5. Division of students on marks basis
+
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+    System.out.println("Enter Mark:");
+    int mark = myObj.nextLine();
+
+    if(mark<35)System.out.println("Fail");
+    else if(mark>=35 && mark<50)System.out.println("Passed in Third division");
+    else if(mark>=50 && mark<65)System.out.println("Passed in Second division");
+    else if(mark>=65 && mark<90)System.out.println("Passed in First division");
+    else System.out.println("Passed with Distinction");
+  }
+}
+
+//6. Factorial program
+public class Main {
+  public static void main(String[] args) {
+    int ans=1;
+    for(int i=1;i<=8;i++)ans=ans*i;
+    System.out.println(ans);
+  }
+}
+
+//7.Swap
+
+public class Main {
+  public static void main(String[] args) {
+    int m=2,n=3;
+        System.out.println("Value of m is " + m+ " and Value of n is " + n);
+        int temp = m;
+        m = n;
+        n = temp;
+        System.out.println("After swap, the value of m is " + m+ " and value of n is " + n);
+  }
+}
+
+//8. Leap year program
+
+import java.util.Scanner;
+public class LeapYear {
+   public static void main(String[] args){
+      int year;
+      System.out.println("Enter an Year :: ");
+      Scanner sc = new Scanner(System.in);
+      year = sc.nextInt();
+
+      if (((year % 4 == 0) && (year % 100!= 0)) || (year%400 == 0))
+         System.out.println("Specified year is a leap year");
+      else
+         System.out.println("Specified year is not a leap year");
+   }
+}
+
+//9. Solid diamond pattern
+
+import java.util.Scanner;
+public class Pattern {
+   public static void main(String[] args){
+    Scanner s = new Scanner(System.in);
+    System.out.println("Enter the number of rows for the pattern");
+    int n = s.nextInt();
+    s.close();
+      
+
+      for(int i=n-1;i>=0;i--){
+         for(int j=0;j<n;j++){
+            if(j>=i)System.out.print("* ");
+            else System.out.print(" ");
+         }
+         System.out.println();
+      }
+      
+      for (int i= 0; i<= n-1 ; i++)
+    {
+        for (int j=0; j<=i; j++)
+        {
+            System.out.print(" ");
+        }
+        for (int k=1; k<=n-1-i; k++)
+        {
+            System.out.print("*" + " ");
+        }
+        System.out.println();
+    }
+   }
+}
+
+//10. Pant's style pattern
+
+import java.util.Scanner;
+
+public class Pattern {
+  public static void main(String[] args) {
+    Scanner s = new Scanner(System.in);
+    System.out.println("Enter the number of rows for the pattern");
+    int n = s.nextInt();
+    s.close();
+    int inner = n;
+    int outer = n;
+
+    for (int i = 1; i <= n; i++) {
+      for (int j = 1; j < n * 2; j++) {
+        if (j > inner && j < outer) {
+          System.out.printf(" ");
+        } else {
+          System.out.printf("*");
+        }
+      }
+      inner--;
+      outer++;
+      System.out.println();
+    }
+  }
+}
+
+//11. inverted pants
+
+class Main  {  
+    public static void main(String[] args)  {  
+      int n = 5;
+
+
+      for(int row = n ; row >= 0 ; row--) {
+        for(int col = n ; col > row ; col--) {
+          System.out.print("* ");
+        }
+        
+        // Prints space in between
+        for(int col = 1 ; col <= 4 * row ; col++) {
+          System.out.print(" ");
+        }
+
+
+        for(int col = row + 1 ; col <= n ; col++) {
+          System.out.print("* ");
+        }
+
+
+        System.out.println();
+      }
+    }  
+}
+
+//12. 3rd max element
+
+public class ThirdMaxElement {
+    public static void main(String[] args) {
+        int[] arr = { 10, 5, 8, 20, 15 };
+        int firstMax = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
+        int thirdMax = Integer.MIN_VALUE;
+
+        for (int num : arr) {
+            if (num > firstMax) {
+                thirdMax = secondMax;
+                secondMax = firstMax;
+                firstMax = num;
+            } else if (num > secondMax && num < firstMax) {
+                thirdMax = secondMax;
+                secondMax = num;
+            } else if (num > thirdMax && num < secondMax) {
+                thirdMax = num;
+            }
+        }
+        System.out.println("The third maximum element is: " + thirdMax);
+    }
+}
+
+//13. Error handling
+
+import java.util.Scanner;
+
+public class Main {
+   public static void main(String[] args) {
+      try {
+         Scanner s = new Scanner(System.in);
+         System.out.print("Enter the first number:");
+         int a = s.nextInt();
+         System.out.println();
+         System.out.print("Enter the second number:");
+         int b = s.nextInt();
+         s.close();
+         System.out.println("a/b=" + a / b);
+      } catch (Exception e) {
+         System.out.println(e);
+      }
+      // System.out.println(a / b);
+   }
+}
+
+//14. Sort string
+
+import java.util.Arrays;
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+
+class Sorter implements Comparator<String>{
+    public int compare(String s1, String s2) {
+        Double d1=Double.parseDouble(s1);
+        Double d2=Double.parseDouble(s2);
+        // System.out.println(d1 + " " + d2);
+        return d2.compareTo(d1);
+    }
+}
+
+public class Sort{
+    public static void main(String[] args) {
+        String[] arr={"100","1","0.1","0","-100","100.00"};
+        // Arrays.sort(arr);
+        Arrays.sort(arr, new Sorter());
+        System.out.println(Arrays.toString(arr));
+    }
+}
+
+//15. Divisors sum
+
+import java.util.*;
+
+interface Func{
+    public int divisors(int n);
+}
+
+class Sum implements Func{
+    public int divisors(int n){
+        int sum=0;
+        for(int i=1;i<=n/2;i++){
+            if(n%i==0){
+                sum+=i;
+            }
+        }
+        return sum+n;
+    }
+}
+
+public class Divisors{
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        System.out.print("Enter the number to find sum of divisors: ");
+        int n=s.nextInt();
+        Sum sum=new Sum();
+        System.out.println(sum.divisors(n));
+    }
+}
