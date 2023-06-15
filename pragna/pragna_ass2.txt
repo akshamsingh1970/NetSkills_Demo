@@ -1,0 +1,370 @@
+1)
+
+Class1.java 
+
+public class class1 {
+    int add(int x,int y)
+    {
+        return x+y;
+    }
+}
+
+Class2.java 
+
+public class class2 extends class1{
+    void print(String a)
+    {
+        System.out.println(a);
+    }
+    
+}
+
+Class3.java 
+
+public class class3 {
+    public static void main(String []args)
+    {
+        class2 c2 =new class2();
+        int res;
+        res=c2.add(3, 4);
+        System.out.println("the sum is :"+res);
+    }
+}
+
+
+2)
+
+Main.java
+
+public interface Main {
+     int sumOfDivisors(int n);
+}
+
+Child.java
+
+import java.util.Scanner;
+
+public class child implements base {
+    @Override
+    public int sumOfDivisors (int n){
+        int sum=1;
+        for(int i=2;i<n/2;i++)
+        {
+            if(n%i==0) {
+                sum+=i;
+            }
+        }
+        return sum;
+    }
+    public static void main(String[] args){
+        child obj =new child();
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        System.out.println("sum of Divisors is: "+ obj.sumOfDivisors(n));
+    }
+}
+
+
+3)
+
+import java.util.*;
+
+public class sortStringDescending {
+    public static void main(String[] args) {
+        String[] input = new String[] {"-100", "50", ".12", "0.12", "0", "000.000"};
+        System.out.println("Given numbers (as strings):");
+        for(String str: input)
+            System.out.print(str + " ");
+        Map<Float, List<String>> mapping = new HashMap<>();
+
+        for(int i = 0; i < input.length; i++) {
+            float num = Float.parseFloat(input[i]);
+            if(mapping.get(num) != null)
+                mapping.get(num).add(input[i]);
+            else {
+                List<String> list = new ArrayList<String>();
+                list.add(input[i]);
+                mapping.put(num, list);
+            }
+        }
+        System.out.println("\n\nSorted numbers (as strings):");
+        sortbykey(mapping);
+        System.out.println("\n");
+
+    }
+
+    public static void sortbykey(Map<Float, List<String>> mapping) {
+        // TreeMap to store values of HashMap
+        TreeMap<Float, List<String>> sorted = new TreeMap<>(Collections.reverseOrder());
+
+        // Copy all data from hashMap into TreeMap
+        sorted.putAll(mapping);
+
+        // Display the TreeMap which is naturally sorted
+        for (Map.Entry<Float, List<String>> entry : sorted.entrySet())
+            for(String ele: entry.getValue())
+                System.out.print(ele + " ");
+    }
+}
+
+
+
+
+
+
+4)
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class java1 {    
+    public static void main (String []args)
+    {
+        try{
+        Scanner sc = new Scanner(System.in);
+        System.out.print(" Enter the value of a : ");
+        int a=sc.nextInt();
+        System.out.print(" Enter the value of b : ");
+        int b=sc.nextInt();
+        int res;
+            res=a/b;
+            System.out.println(res);
+        }
+        catch(ArithmeticException e)
+        {
+            System.out.println("java.lang.ArithmeticException: / by zero");
+        }
+        catch(InputMismatchException e)
+        {
+            System.out.println(" java.util.InputMismatchException");
+        }
+    }
+
+}
+
+
+5)
+
+Jundhanaccount.java 
+
+
+public class JundhanAccount extends SbiBankAccount {
+
+    private int balance;
+
+    public void JundhanAccount(){
+        this.balance=0;
+    }
+    @Override
+    public void deposit(int depositAmount){
+        this.balance+=depositAmount;
+        System.out.println("Deposit Successfully completed");
+        System.out.println("Now your current balance is: "+this.balance);
+    }
+
+    @Override
+    public void withdraw(int withdrawAmount){
+        if(this.balance<withdrawAmount){
+            System.out.println("We cannot process your withdraw request because of Insufficient Balance");
+        }
+        else{
+            this.balance-=withdrawAmount;
+            System.out.println("Withdraw Successfully completed");
+            System.out.println("Now your current balance is: "+this.balance);
+        }
+    }
+    @Override
+    public void openAccount(){
+      this.balance=0;
+      System.out.println("Your Jundhan Account is Successfully created");
+      System.out.println("Your Current Balance is : "+this.balance);
+    }
+    public static void main(String[] args){
+        JundhanAccount account=new JundhanAccount();
+        account.deposit(5000);
+        account.withdraw(5000);
+    }
+}
+
+Premium account .java
+
+public class PremiumAccount extends SbiBankAccount {
+
+
+    private int balance;
+    public void PremiumAccount(){
+        balance=0;
+    }
+   @Override
+    public void deposit(int depositAmount){
+       this.balance+=depositAmount;
+       System.out.println("Deposit Successfully completed");
+       System.out.println("Now your current balance is: "+this.balance);
+    }
+
+    @Override
+    public void withdraw(int withdrawAmount){
+      if(this.balance<(5000+withdrawAmount)){
+          System.out.println("We cannot process your withdraw request because of Insufficient Balance");
+      }
+      else{
+          this.balance-=withdrawAmount;
+          System.out.println("Withdraw Successfully completed");
+          System.out.println("Now your current balance is: "+this.balance);
+      }
+    }
+    @Override
+    public void openAccount(){
+         this.balance=5000;
+        System.out.println("Your Jundhan Account is Successfully created");
+        System.out.println("Your Current Balance is : "+this.balance);
+    }
+    public static void main(String[] args){
+
+        PremiumAccount account=new PremiumAccount();
+        account.deposit(10000);
+        account.withdraw(5000);
+    }
+}
+
+
+SbiBankAccount.java
+
+import java.util.Scanner;
+
+public class SbiBankAccount {
+    private int balance;
+    public void SbiBankAccount(){
+        this.balance=0;
+    }
+    public void deposit(int depositAmount){}
+
+    public void withdraw(int withdrawAmount){}
+    public void openAccount(){}
+
+
+
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+
+    }
+}
+
+
+6)
+
+Bankaccount.java
+
+public interface BankAccount {
+    public void deposit(int depositAmount);
+    public void withdraw(int withdrawAmount);
+    public void calculateIntrest();
+    public void viewBalance();
+}
+
+
+
+BankingSystem.java
+
+public class BankingSystem {
+    public static void main(String[] args){
+        BankAccount account1=new SavingsAccount();
+        BankAccount account2=new CurrentAccount();
+        account1.deposit(5000);
+        account1.withdraw(2000);
+
+
+        account2.deposit(5000);
+        account2.withdraw(2000);
+
+        account1.viewBalance();
+        account2.viewBalance();
+
+        account1.calculateIntrest();
+        account2.calculateIntrest();
+    }
+}
+
+Currentaccount.java
+
+
+public class CurrentAccount implements BankAccount {
+
+    private int balance;
+
+    public void CurrentAccount(){
+        this.balance=0;
+    }
+    @Override
+    public void deposit(int depositAmount){
+        this.balance+=depositAmount;
+        System.out.println("Deposit Successfully completed");
+        System.out.println("Now your current balance is: "+this.balance);
+    }
+    @Override
+    public void withdraw(int withdrawAmount){
+        if(this.balance<withdrawAmount){
+            System.out.println("We cannot process your withdraw request because of Insufficient Balance");
+        }
+        else{
+            this.balance-=withdrawAmount;
+            System.out.println("Withdraw Successfully completed");
+            System.out.println("Now your current balance is: "+this.balance);
+        }
+    }
+    @Override
+    public void calculateIntrest(){
+        double Intrest=this.balance*0.05;
+        System.out.println("Intrest is : "+Intrest);
+    }
+    @Override
+    public void viewBalance(){
+        System.out.println("Now your current balance is: "+this.balance);
+    }
+    public static void main(String[] args){
+
+    }
+}
+
+Savingsaccount.java
+
+
+public class SavingsAccount implements BankAccount {
+    private int balance;
+    public void SavingsAccount(){
+        this.balance=0;
+    }
+
+    @Override
+    public void deposit(int depositAmount){
+        this.balance+=depositAmount;
+        System.out.println("Deposit Successfully completed");
+        System.out.println("Now your current balance is: "+this.balance);
+    }
+    @Override
+    public void withdraw(int withdrawAmount){
+        if(this.balance<withdrawAmount){
+            System.out.println("We cannot process your withdraw request because of Insufficient Balance");
+        }
+        else{
+            this.balance-=withdrawAmount;
+            System.out.println("Withdraw Successfully completed");
+            System.out.println("Now your current balance is: "+this.balance);
+        }
+    }
+
+    @Override
+    public void calculateIntrest(){
+        double Intrest=this.balance*0.05;
+        System.out.println("Intrest is : "+Intrest);
+    }
+
+    @Override
+    public void viewBalance(){
+        System.out.println("Now your current balance is: "+this.balance);
+    }
+    public static void main(String[] args){
+
+    }
+}
