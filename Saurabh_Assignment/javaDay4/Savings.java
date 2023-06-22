@@ -24,6 +24,8 @@ class InvalidWithdrawException extends Exception{
     }
 }
 
+
+
 interface BankAccount{
     List<BankAccount> accList = new ArrayList<BankAccount>();
     // static{accList = new ArrayList<BankAccount>();} //!block inializer not allowed
